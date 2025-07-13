@@ -143,10 +143,31 @@
                         <span>Pengelolaan Stok</span>
                     </div>
                 </div>    
-            <div class="sidebar-item flex items-center py-2 px-4 text-white-600 hover:text-white cursor-pointer">
+            <div class="sidebar-item flex items-center justify-between py-2 px-4 text-white-600 hover:text-white cursor-pointer" id="procurementMenuBtn">
+                <div class="flex items-center">
                 <i class="fas fa-shopping-bag mr-3 text-sm"></i>
-                <span class="text-sm">Procurement</span>
+                <span class="text-sm font-medium">Procurement</span>
+                </div>
+                <i class="fas fa-chevron-down transition-transform" id="procurementMenuIcon"></i>
             </div>
+            <div id="procurementSubmenu" class="ml-8 py-1 hidden">
+                    <div class="sidebar-item flex items-center py-2 px-4 text-white-600 hover:text-white cursor-pointer text-sm">
+                        <i class="fas fa-file-alt mr-3 text-xs"></i>
+                        <span>Permintaan Pembelian</span>
+                    </div>
+                    <div class="sidebar-item flex items-center py-2 px-4 text-white-600 hover:text-white cursor-pointer text-sm">
+                        <i class="fas fa-file-signature mr-3 text-xs"></i>
+                        <span>Pesanan Pembelian</span>
+                    </div>
+                    <div class="sidebar-item flex items-center py-2 px-4 text-white-600 hover:text-white cursor-pointer text-sm">
+                        <i class="fas fa-truck-loading mr-3 text-xs"></i>
+                        <span>Penerimaan Barang</span>
+                    </div>
+                    <div class="sidebar-item flex items-center py-2 px-4 text-white-600 hover:text-white cursor-pointer text-sm">
+                        <i class="fas fa-user-tie mr-3 text-xs"></i>
+                        <span>Manajemen Supplier</span>
+                    </div>
+                </div> 
             <div class="sidebar-item flex items-center py-2 px-4 text-white-600 hover:text-white cursor-pointer">
                 <i class="fas fa-chart-bar mr-3 text-sm"></i>
                 <span class="text-sm">Laporan</span>
@@ -209,8 +230,8 @@
                             <i class="fas fa-user text-primary"></i>
                         </div>
                         <div class="text-left">
-                            <p class="text-sm font-medium text-textPrimary">Reski Nuraliah</p>
-                            <p class="text-xs text-textSecondary">reskiadmin@prisma.com</p>
+                            <p class="text-sm font-medium text-textPrimary">Admin Amanda</p>
+                            <p class="text-xs text-textSecondary">amandaadmin@prisma.com</p>
                         </div>
                         <i class="fas fa-chevron-down text-textSecondary text-xs"></i>
                     </button>
@@ -550,6 +571,15 @@
             inventoryMenuBtn.addEventListener('click', function() {
                 inventorySubmenu.classList.toggle('hidden');
                 inventoryMenuIcon.classList.toggle('rotate-180');
+            });
+
+            const procurementMenuBtn = document.getElementById('procurementMenuBtn');
+            const procurementSubmenu = document.getElementById('procurementSubmenu');
+            const procurementMenuIcon = document.getElementById('procurementMenuIcon');
+
+        procurementMenuBtn.addEventListener('click', function() {
+                procurementSubmenu.classList.toggle('hidden');
+                procurementMenuIcon.classList.toggle('rotate-180');
             });
         });
 </script>
